@@ -4,8 +4,9 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Welcome");
+app.get("/greeting/:name", (req, res) => {
+  const {name} = req.params
+    res.send(`What's poppin ${name}`);
 });
 
 app.listen(PORT, () => {
